@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Www::Application.config.secret_token = '918f9bd9572f52e7debdab90d696b58aa53db08d76217076c8839342d32d5b9058d097d72e3787e2b49d9343f4286535fc09b7fd8c326293a8b055927c994b8b'
+Www::Application.config.secret_token = '5a8e939489a5fb0ad79b0c3f747ea59d9e30cd7e27778bb89a0106def2090e924fae3d9f85fbcf36a65c266f446a9ec8001742b60a73f0e921c3d9fb13954cc4'

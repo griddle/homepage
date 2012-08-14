@@ -1,3 +1,49 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+a {
+	color: #99cc99;	
+}
+a:hover {
+	color: #669966;
+}
+
+h1 {
+	font-size: 36px;
+	font-weight: normal;
+}
+
+#maincol {
+	width: 724px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#colleft {
+	margin-top: 50px;
+	width: 240px;
+	float: left;
+	text-align: right;
+}
+#colright {
+	background-color: #eee;
+	width: 480px;
+	float: left;
+}
+
+#p_about {
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 20px;
+}
+
+#link_list {
+	margin-top: 20px;
+	font-size: 15px;
+}
+#link_list a {
+	margin-top: 6px;
+}
