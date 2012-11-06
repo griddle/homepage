@@ -1,17 +1,31 @@
-#maincol
-  #colleft
-    %h1 Garret Riddle
-    %p#p_about
-      A software developer, golfer, runner,
-      = succeed "human" do
-        %br/
-      enthusiast, with plans of world
-      = succeed "domination," do
-        %br/
-      starting with San Francisco.
-    #link_list
-      %a{:href => ""} email
-      %br/
-      %a{:href => ""} another link
-  #colright
-    asd
+
+#fixed_summary_box
+	%h1 Garret Riddle
+	%p#p_about
+		Business consultant, programmer,
+		%br/ 
+		golfer, people enthusiast.
+	%p#p_location
+		Currently in San Francisco.
+	%ul#link_list
+		%li
+			%a{:href => "#start"} new? start here
+		%li
+			%a{:href => "#projects"} projects
+		/ %li
+		/ 	%a{:href => "#blog"} blog
+		%li
+			%a{:href => "#about"} more Garret
+
+= render "home/pages/start_here"
+= render "home/pages/blog"
+= render "home/pages/projects"
+= render "home/pages/about_me"
+
+
+#body_right_border
+
+
+
+= javascript_include_tag :home
+

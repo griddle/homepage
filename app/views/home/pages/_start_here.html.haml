@@ -1,0 +1,46 @@
+#page_start_here.page
+	%h3 Welcome
+	%p 
+		I'm Garret, that guy.  Thanks for stopping by my internet home.  I'm a consultant
+		dedicated to the success of my friends and making the world a better place.
+		The biggest tool I wield is programming, I specialize in iOS mobile and Rails web application development.
+	%h3 An Open Invitation
+	%p 
+		I love to talk about business, software, tech, math, baseball, The Simpsons, and more! I invite you to
+		start a conversation with me.  The best way to contact me is through
+		= mail_to "garret@igarret.com", "email.", :encode => "javascript", 
+			:subject => "invitation accepted",
+			:body => ""
+		I promise I'll be glad you wrote.
+	%h3 Like This Site?
+	%p
+		You can have it!
+		= link_to("https://github.com/griddle/homepage", "https://github.com/griddle/homepage", :target => "_blank")
+		
+	%canvas#arrow_canvas
+		
+
+:javascript
+	(function(){
+		var arrow_color = "#454545";
+		var canvas = document.getElementById("arrow_canvas");  
+		canvas.width = 200;
+		canvas.height = 100;
+		var ctx = canvas.getContext("2d")  
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = arrow_color;
+		ctx.fillStyle = arrow_color;
+	  ctx.shadowColor = 'rgba(0,0,0,0.2)';
+	  ctx.shadowBlur = 1;
+	  ctx.shadowOffsetX = 1;
+	  ctx.shadowOffsetY = 1;
+		ctx.beginPath();  
+		ctx.moveTo(180, 100);
+		ctx.quadraticCurveTo(210, -40, 4, 70);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(0, 72);
+		ctx.lineTo(10, 72);
+		ctx.lineTo(8, 62);
+		ctx.fill();
+	})();

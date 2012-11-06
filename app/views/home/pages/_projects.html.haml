@@ -1,0 +1,21 @@
+#page_projects.page
+	#enter_password_box
+		%h3 Password required
+		=form_tag "", :id => :portfolio_request do
+			=text_field_tag "view_projects_password"
+			=submit_tag "enter"
+			%p#project_pw_error_mssg
+		=link_to "why?", "", :id => "why_password"
+		%span#why_request_spacer &#x25CF;
+		= mail_to "garret@igarret.com", "request access", :encode => "javascript", :subject => "view projects request"
+		#why_pw_answered
+			%h5 Why, you ask?
+			%p
+				It's a small protection for my clients and friends.  The privacy of their business
+				actions is theirs to own.
+				%br/
+				=link_to "More info", "", :id => "why_again"
+		#why_again_answered
+			%h5 Request and you shall receive
+			%p
+				My work is not a secret, you're welcome to take a look. Click "request access" above and send me an email.

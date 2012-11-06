@@ -2,48 +2,349 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-a {
-	color: #99cc99;	
-}
-a:hover {
-	color: #669966;
-}
-
-h1 {
-	font-size: 36px;
-	font-weight: normal;
+body {
+	background: {
+		image: url('cream_dust.png');
+		repeat: repeat;
+	}
+	color: #454545;
 }
 
-#maincol {
-	width: 724px;
+body > #fixed_summary_box, body > .page {
+	visibility: hidden;	
+}
+
+#simple_overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 	height: 100%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#colleft {
-	margin-top: 50px;
-	width: 240px;
-	float: left;
-	text-align: right;
-}
-#colright {
 	background-color: #eee;
-	width: 480px;
-	float: left;
+	filter:alpha(opacity=70);
+	-moz-opacity:0.7;
+	-khtml-opacity: 0.7;
+	opacity: 0.7;
+	z-index: 998;
+}
+#project_overview_box {
+	display: none;
+	position: fixed;
+	border: solid 1px #ccc;
+	background-color: #fff;
+	padding: 20px;
+	margin: 0 auto;
+	z-index: 999;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+	top:50%;
+	left:50%;
+	z-index:999;
+	width:650px;
+	height:365px;
+	margin-left:-325px;
+	margin-top:-200px;
+	#o_title {
+		margin-bottom: 5px;
+	}
+	.bullet_separator {
+		margin: 0px 3px;
+	}
+	#simple_overlay_close_button {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		padding: 2px;
+		margin: 2px;
+		cursor: pointer;
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+	#slides {
+		float: left;
+		.slides_container {
+			margin-top: 15px;
+			width: 400px;
+			height: 290px;
+		}
+		.pagination {
+			margin-top: 15px;
+			width:100px;
+		}
+		.pagination li {
+			float:left;
+			margin:0 1px;
+			list-style:none;
+		}
+		.pagination li a {
+			display:block;
+			width:12px;
+			height:0;
+			padding-top:12px;
+			background-image:url('pagination.png');
+			background-position:0 0;
+			float:left;
+			overflow:hidden;
+		}
+		.pagination li.current a {
+			background-position:0 -12px;
+		}
+	}
+	#info_section {
+		margin-top: 15px;
+		width: 230px;
+		float: right;
+/*		background-color: #eee;*/
+		h5 {
+			font-size: 11px;
+			margin-top: 10px;
+			font-weight: bold;
+			&:first-child {
+				margin-top: 0px;
+			}
+		}
+		p {
+			font-size: 11px;
+			margin-top: 6px;
+		}
+	}
 }
 
-#p_about {
-	font-size: 12px;
-	line-height: 16px;
-	margin-top: 20px;
+
+#fixed_summary_box {
+	position: fixed;
+	z-index: 994;
+	width: 240px;
+	padding-right: 30px;
+	text-align: right;
+	& > * + * {
+		margin-top: 20px;
+	}
+	#p_about {
+		font-size: 12px;
+	}
+	#p_location {
+	}
+	ul#link_list {
+		list-style-type: none;
+		line-height: 1.7;
+		& li a {
+			padding-right: 6px;
+			margin-right: 3px;
+			border-right: solid 4px
+		}
+		& li a[href="#about"] {
+			border-color: $std_brown;
+		}
+		& li a[href="#projects"] {
+			border-color: $std_green;
+		}
+		& li a[href="#blog"] {
+			border-color: $std_blue;
+		}
+		& li a[href="#start"] {
+			border-color: #454545;
+		}
+	}
 }
 
-#link_list {
-	margin-top: 20px;
-	font-size: 15px;
+.page {
+	position: fixed;
+	z-index: 99;
+	visibility: hidden;
+	p {
+		font-size: 12px;
+	}
+	&#page_start_here {
+		h3 {
+			margin-top: 20px;
+			margin-bottom: 8px;
+		}
+		width: 400px;
+		height: 300px;
+		padding: 30px;
+		border-left: solid 1px #999;
+	}
+	&#page_about_me {
+		width: 340px;
+/*		height: 500px;*/
+		padding: 30px;
+		border-left: solid 1px #999;
+		h3 {
+			margin-top: 20px;
+			margin-bottom: 8px;
+			&:first-child {
+				margin-top: 0px;
+			}
+		}
+		p {
+			margin-top: 6px;
+		}
+		img#framed_garret{
+			position: absolute;
+			border: solid 1px #eee;
+			box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+			left: -450px;
+			transform:rotate(-2deg);
+			-ms-transform:rotate(-7deg);
+			-moz-transform:rotate(-7deg);
+			-webkit-transform:rotate(-7deg);
+			-o-transform:rotate(-7deg);
+		}
+		.a_text_body {
+			display: none;
+		}
+		.a_more_link {
+			float: left;
+			margin-top: 20px;
+			cursor: pointer;
+			display: none;
+		}
+	}
+	&#page_projects {
+		#project_pw_error_mssg {
+			position: absolute;
+			display: none;
+			font-size: 11px;
+			color: #994545;
+			padding: 5px;
+			border-radius: 5px;
+			background-color: rgba(255,0,0,0.1);
+			margin: 0px 5px;
+		}
+		&.project_box_showing {
+			overflow-y: auto;
+			overflow-x: visible;
+		}
+		#projects_box {
+			width: 634px;
+			overflow: hidden;
+			.a_project_box {
+				float: left;
+				overflow: hidden;
+				border-right: solid 1px;
+				border-bottom: solid 1px;
+				border-color: #ccc;
+				background-color: #f8f8f8;
+				cursor: pointer;
+				.a_project_inside_box {
+					margin: 10px;
+					position: relative;
+					.inside_top {
+						border: solid 1px #ccc;	
+					}
+					.inside_bottom {
+						position: relative;
+						height: 35px;
+						h5 {
+							font-size: 13px;
+							font-weight: bold;
+							margin-top: 6px;
+							margin-bottom: 2px;
+						}
+						h6 {
+							font-size: 10px;
+							font-weight: normal;
+						}
+						.project_more_info {
+							display: none;
+							font-size: 10px;
+							.project_more_info_date {
+								margin-top: 4px;
+								margin-bottom: 6px;
+							}
+							p {
+								font-size: 10px;
+							}
+						}
+					}
+				}
+				&.full_col {
+					width: 632px;
+					height: 249px;
+					border-left: solid 1px #ccc;
+					.a_project_inside_box {
+						.inside_top{
+							height: 229px;
+						}
+					}
+				}
+				&.two_third_col {
+					width: 421px;
+					height: 319px;
+					.a_project_inside_box {
+						.inside_top{
+							height: 264px;
+						}
+					}
+				}
+				&.one_third_col {
+					height: 159px;
+					width: 210px;
+					.a_project_inside_box {
+						.inside_top{
+							height: 104px;
+						}
+					}
+				}
+				&.force_right_side {
+					float: right;
+				}
+			}
+			.left_col {
+				border-left: solid 1px #ccc;
+			}
+			.top_col {
+				border-top: solid 1px #ccc;
+			}
+		}
+		#enter_password_box {
+			width: 300px;
+			border: solid 1px #ccc;
+			border-radius: 8px;
+			padding: 30px;			
+			form#portfolio_request {
+				margin: 10px 0px;
+			}
+			a#why_again {
+				display: table;
+				margin-top: 8px;
+			}
+			span#why_request_spacer {
+				display: inline;
+				padding: 0px 3px;
+			}
+			#why_pw_answered, #why_again_answered {
+				display: none;
+				h5 {
+					margin-top: 20px;
+					margin-bottom: 5px;
+				}
+				p {
+					font-size: 11px;
+				}
+			}
+		}
+	}
+	&#page_blog {
+		width: 700px;
+		height: 600px;
+	}
+	& canvas#arrow_canvas{
+		position: absolute;
+		top: -24px;
+		left: -55px;
+	}
 }
-#link_list a {
-	margin-top: 6px;
+
+#body_right_border {
+	position: fixed;
+	right: 0px;
+	width: 30px;
+	height: 100%;
+	background-color: #ff0000;
+	z-index: 0;
 }
+
+

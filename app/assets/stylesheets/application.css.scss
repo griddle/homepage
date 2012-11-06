@@ -2,16 +2,73 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require reset
  *= require_self
- *= require_tree . 
 */
 
-.stdbrown {
-	color: #993300;
+$std_brown: #993300;
+$std_green: #99cc99;
+$std_blue: #003366;
+
+$link_hover: #669966;
+
+
+@import "home.css.scss";
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+/*	height: 100%;*/
 }
-.stdgreen {
-	color: #99cc99;
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, sans-serif;
+	font-size: 13px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
-.stdblue {
-	color: #003366;
+
+a {
+	color: $link_hover;
+	text-decoration: none;
 }
+a:hover {
+/*	color: $link_hover;*/
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 36px;
+	font-weight: normal;
+}
+h2 {
+	font-size: 24px;
+	font-weight: normal;
+}
+h3 {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+
+h5 {
+	font-size: 14px;
+}
+
+p {
+	line-height: 1.4;
+}
+
+.clear_both {
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
